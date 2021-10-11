@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import image from "../../assets/portifolio.svg";
+
+import { AiFillFacebook } from "@react-icons/all-files/ai/AiFillFacebook";
+
+import { AiOutlineMail } from "@react-icons/all-files/ai/AiOutlineMail";
+
+import { AiFillTwitterSquare } from "@react-icons/all-files/ai/AiFillTwitterSquare";
+
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -116,10 +123,10 @@ const Row = styled.div`
   max-width: 100%;
   border-radius: inherit;
   justify-content: center;
-  padding: 2rem 5rem;
   flex-wrap: wrap;
   display: flex;
   align-items: flex-start;
+  margin-bottom: 3rem !important;
 `;
 
 const InterSocial = styled.div`
@@ -141,7 +148,7 @@ const ParagraphSocial = styled.p`
   font-family: 'Open Sans', sans-serif;
   letter-spacing: -0.1rem;
   width: 100%;
-  font-size: 1.75em;
+  font-size: 2.5em;
   line-height: 1.5;
   font-weight: 800;
 `;
@@ -150,7 +157,7 @@ const ParagraphSocialInfo = styled.p`
   text-align: left;
   color: #000000;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1em;
+  font-size: 25px;
   line-height: 1.5;
   font-weight: 300px;
 `;
@@ -168,6 +175,7 @@ const Image = styled.img`
   border-radius: 0 !important;
 `;
 
+const Div = styled.div`position: relative;`;
 const ContainerConnect = styled.div`
   display: flex;
   width: 100%;
@@ -188,6 +196,63 @@ const Icons = styled.ul`
   margin-left: -0.3125rem;
 `;
 
+const Button = styled.button`
+  text-align: center;
+  color: #e53e3e;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.3rem;
+  font-size: 1em;
+  line-height: 1.5;
+  width: 100%;
+`;
+
+const TextConnect = styled.h4`
+  text-align: center;
+  color: #e53e3e;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.175rem;
+  width: calc(100% + 0.175rem);
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 700;
+`;
+const TextCenter = styled.h4`
+  text-align: center;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.175rem;
+  width: calc(100% + 0.175rem);
+  font-size: 3em;
+  line-height: 1.5;
+  font-weight: 700;
+`;
+
+const TextCenter2 = styled.h4`
+  text-align: center;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+
+  letter-spacing: 0.175rem;
+  width: calc(100% + 0.175rem);
+  font-size: 1.15em;
+  line-height: 1.5;
+  font-weight: 700;
+`;
+const TextButton = styled.h4`color: white;`;
+const LinkSocial = styled.div`
+  background: transparent;
+  padding: 25px 20px;
+  text-align: center;
+`;
+const Link = styled.a`
+  background: transparent;
+  padding: 25px 25px;
+`;
+const TextMade = styled.h3`
+  color: black;
+  text-align: center;
+`;
+
 export default function Footer() {
   return (
     <footer>
@@ -196,7 +261,8 @@ export default function Footer() {
           <Inter>
             <Paragraph>❝</Paragraph>
             <Text>
-              This agency is the greatest thing we have ever seen. Totally
+              This agency is the greatest thing we have ever seen. Totally{" "}
+              <br />
               recommended for your projects.
             </Text>
 
@@ -214,7 +280,8 @@ export default function Footer() {
             <TextUseCase>WORK</TextUseCase>
             <TextUseCase2>Use Cases</TextUseCase2>
             <TextUseCase3>
-              Check out our previous work. Businesses went from laggards to
+              Check out our previous work. Businesses went from laggards to{" "}
+              <br />
               innovators, after out automation improvements spearheaded revenue.
             </TextUseCase3>
           </Inter>
@@ -224,9 +291,7 @@ export default function Footer() {
       <br />
       <Row>
         <div>
-          <ParagraphSocial>
-            Social Media<br /> Automation
-          </ParagraphSocial>
+          <ParagraphSocial>Social Media Automation</ParagraphSocial>
           <ParagraphSocialInfo>
             We have worked on a number of different projects <br /> in this
             space. From creating a bot to post to <br /> multiple Facebook
@@ -241,20 +306,20 @@ export default function Footer() {
           <Image src={image} />
         </div>
       </Row>
-      <Row style={{ padding: 30 }}>
-        <div>
+      <Row style={{ justifycontent: "space-between" }}>
+        <div style={{ padding: "0px 60px" }}>
           <ParagraphSocial>Spreadsheet Automation</ParagraphSocial>
           <ParagraphSocialInfo>
             Lorem ipsum dolor sit amet, consectetur adipiscing <br /> elit, sed
-            do eiusmod tempor incididunt ut labore et <br />dolore magna aliqua.
-            Ut enim ad minim veniam, <br /> quis nostrud
+            do eiusmod tempor incididunt ut labore et <br />
+            dolore magna aliqua. Ut enim ad minim veniam, <br /> quis nostrud
             <ParagraphSocialA href="http://www.google.com.br">
               Read More →
             </ParagraphSocialA>
           </ParagraphSocialInfo>
         </div>
 
-        <div>
+        <Div style={{ padding: "0px 60px" }}>
           <ParagraphSocial>ChatBot for office space</ParagraphSocial>
           <ParagraphSocialInfo>
             Our client currently supports both in office and <br /> remote work.
@@ -264,19 +329,47 @@ export default function Footer() {
               Read More →
             </ParagraphSocialA>
           </ParagraphSocialInfo>
-        </div>
+        </Div>
       </Row>
 
       <ContainerConnect>
         <Wrapper>
-          <h3>CONNECT</h3>
-          <h1> Let's automate it</h1>
-          <h5>Contact us to help take your business to the next level! 🚀</h5>
-          <button>ola</button>
+          <TextConnect>CONNECT</TextConnect>
+          <TextCenter> Let's automate it</TextCenter>
+          <TextCenter2>
+            Contact us to help take your business to the next level! 🚀
+          </TextCenter2>
+          <br />
+          <br />
+          <Button className="btn btn-block btn-lg bg-danger ">
+            <TextButton>Book Now</TextButton>
+          </Button>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
 
           <Social>
             <Wrapper>
-              {/* <Icons /> */}
+              <LinkSocial>
+                <Link href="https://mail.google.com/">
+                  <AiOutlineMail size={40} color="black" />
+                </Link>
+                <Link href="https://www.facebook.com/">
+                  <AiFillFacebook color="black" size={40} />
+                </Link>
+                <Link href="https://twitter.com/">
+                  <AiFillTwitterSquare color="black" size={40} />
+                </Link>
+                <br />
+                <br />
+                <TextMade>
+                  Made with <span style={{ color: "#F56565" }}>♡ </span> in the
+                  United States
+                </TextMade>
+              </LinkSocial>
             </Wrapper>
           </Social>
         </Wrapper>
